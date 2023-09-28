@@ -161,23 +161,24 @@ const searchDataHandler = (data, inputValues)=>{
 
       let result = [];
       data.filter((e) => {
-         if(inputValues.includes((e.color).toLowerCase())){
-            result.push(e);
-         }
-         else if(inputValues.includes((e.type).toLowerCase())){
-            result.push(e);
-         }
-         else if(inputValues.includes((e.gender).toLowerCase())){
-            result.push(e);
-         }
-         else{
-            arr.forEach(ele => {
-               if(((e.name).toLowerCase()).includes(ele)){
-                  result.push(e);
-                  return;
-               }
-            });
-         }
+         arr.forEach(ele => {
+            if(((e.name).toLowerCase()).includes(ele)){
+               result.push(e);
+               return;
+            }
+            else if(((e.type).toLowerCase()).includes(ele)){
+               result.push(e);
+               return;
+            }
+            else if(((e.color).toLowerCase()).includes(ele)){
+               result.push(e);
+               return;
+            }
+            else if(((e.gender).toLowerCase()).includes(ele)){
+               result.push(e);
+               return;
+            }
+         });
       });
 
       // console.log(result)
